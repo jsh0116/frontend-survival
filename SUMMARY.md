@@ -1,3 +1,3 @@
 # Table of contents
 
-* [GitBook 가이드](README.md)
+* [Frontend-Survival](README.md)
