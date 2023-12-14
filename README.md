@@ -1,8 +1,6 @@
----
-description: '기간: 2023.12.14 ~ 2023.03.10'
----
-
 # Frontend-Survival
+
+* 기간: 2023.12.14 \~ 2023.03.10
 
 ## Tech Stack
 
