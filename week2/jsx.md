@@ -127,7 +127,24 @@ React.createElement(
 
 ## Virtual DOM
 
+* 사용하는 이유
+  * js를 통해 화면을 나타내는 DOM을 수정하면 rendering 과정 중 레이아웃이나 페인트 과정이 다시 발생하게 된다
+  * 반응형 웹에서 이런 수정이 많이 발생하게 되면 특히 리플로우 과정이 많이 발생하면 브라우저 성능이 악화
+  * 그래서 리액트는 가상 돔에 변경 사항을 적용하고 실제로 변경된 부분을 계산해서 돔에 일괄적으로 적용하는 Batch Update를 적용해서 성눙을 최적화
+* 동작 방식
+  * React는 Reconciliation 과정을 통해 Virtual DOM을 이용해서 실제 돔 조작
+    * Reconciliation: 데이터 변경에 따라 어떤 컴포넌트가 변경되어야 하는지 선별하여 갱신하는 작업
+  * 리액트는 항상 2개의 가상 돔을 가지고 있음 (업데이트를 위한, 업데이트가 되지 않은)
+  * diffing 알고리즘을 통해 비교
+  * 알고리즘 결과로 실제 변경된 부분을 알 수 있고 그 부분을 일괄적으로 실제 DOM에 적용
+  * fiber : 리액트 가상 돔 변경과정에서 발생하는 동시성, 애니메이션과 같은 문제점들을 해결하기 위해 적용한 알고리즘
+* [VDOM (Virtual DOM)](https://ko.reactjs.org/docs/faq-internals.html)
+* [재조정 (Reconciliation)](https://ko.reactjs.org/docs/reconciliation.html)
 
+### React Developer Tools
+
+* [react devtools extensions](https://github.com/facebook/react/tree/main/packages/react-devtools-extensions)
+  * [Strict Mode](https://ko.reactjs.org/docs/strict-mode.html)를 쓰지 않으면 경고함.
 
 ## References
 
